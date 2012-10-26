@@ -343,7 +343,7 @@ class Module_Calendars extends Module {
 		/* Calendars assignments
 		-----------------------------------------------------------*/
 		$this->streams->fields->assign_field('calendars', 'calendars', 'str_id', 			array('required' => true, 'unique' => true, 'instructions' => 'lang:calendars:instructions:str_id'));
-		$this->streams->fields->assign_field('calendars', 'calendars', 'title', 			array('required' => true, 'instructions' => 'lang:calendars:instructions:title'));
+		$this->streams->fields->assign_field('calendars', 'calendars', 'title', 			array('required' => true, 'title_column' => true, 'instructions' => 'lang:calendars:instructions:title'));
 		$this->streams->fields->assign_field('calendars', 'calendars', 'privacy', 			array('required' => true, 'instructions' => 'lang:calendars:instructions:privacy'));
 		$this->streams->fields->assign_field('calendars', 'calendars', 'notes',		 		array('instructions' => 'lang:calendars:instructions:notes'));
 		$this->streams->fields->assign_field('calendars', 'calendars', 'description', 		array('instructions' => 'lang:calendars:instructions:description'));
@@ -360,7 +360,7 @@ class Module_Calendars extends Module {
 		-----------------------------------------------------------*/
 		$this->streams->fields->assign_field('calendars', 'events', 'str_id', 				array('required' => true, 'unique' => true));
 		$this->streams->fields->assign_field('calendars', 'events', 'calendar_id', 			array('required' => true, 'instructions' => 'lang:calendars:instructions:calendar_id'));
-		$this->streams->fields->assign_field('calendars', 'events', 'title', 				array('required' => true, 'instructions' => 'lang:calendars:instructions:title'));
+		$this->streams->fields->assign_field('calendars', 'events', 'title', 				array('required' => true, 'title_column' => true, 'instructions' => 'lang:calendars:instructions:title'));
 		$this->streams->fields->assign_field('calendars', 'events', 'starting', 			array('required' => true, 'instructions' => 'lang:calendars:instructions:starting'));
 		$this->streams->fields->assign_field('calendars', 'events', 'ending', 				array('required' => true, 'instructions' => 'lang:calendars:instructions:ending'));
 		$this->streams->fields->assign_field('calendars', 'events', 'notes',	 			array('instructions' => 'lang:calendars:instructions:notes'));
