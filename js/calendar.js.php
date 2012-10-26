@@ -53,7 +53,7 @@
 				{
 						
 					// Go there...
-					window.location = BASE_URL + 'admin/calendars/events/edit/' + event.id;
+					window.location = BASE_URL + 'admin/calendars/events/view/' + event.id;
 					
 					return false;
 					

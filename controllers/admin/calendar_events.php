@@ -192,6 +192,6 @@ class Calendar_events extends Admin_Controller
 		// Update as complete
 		$this->db->where('id', $id)->delete('calendars_events');
 
-		redirect($_SERVER['HTTP_REFERER']);
+		redirect(site_url('admin/calendars'));
 	}
 }
