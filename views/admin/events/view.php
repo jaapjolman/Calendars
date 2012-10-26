@@ -19,7 +19,7 @@
 			<?php endif; ?>
 
 			<!-- Title -->
-			<h1 class="title"><?php echo $event->title; ?> <span style="color: <?php echo $calendar->bg_color; ?>;">(<?php echo $calendar->title; ?>)</span></h1>
+			<h1 class="title"><?php echo $event->title; ?> <small style="color: <?php echo $calendar->bg_color; ?>;">(<?php echo $calendar->title; ?>)</small></h1>
 
 			<!-- Times -->
 			<?php if ( empty($event->all_day) ) : ?>
