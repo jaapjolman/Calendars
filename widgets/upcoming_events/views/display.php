@@ -32,7 +32,7 @@
 				$print_time = $entry_time;
 			}
 		?>
-		<li class="event <?php echo (defined('ADMIN_THEME')) ? 'calendar_'.$event->calendar_id : null; ?>" >
+		<li class="event <?php echo (defined('ADMIN_THEME')) ? 'calendar_'.$event->calendar : null; ?>" >
 			<strong><?php echo $event->title; ?></strong> <?php echo $event->description; ?>
 
 			<div class="time"><?php echo date('g:i A', $event->start); ?></div>
