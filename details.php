@@ -251,8 +251,8 @@ class Module_Calendars extends Module {
 				'type'			=> 'text',
 				),
 			array(
-				'name'			=> 'lang:calendars:calendar_id',
-				'slug'			=> 'calendar_id',
+				'name'			=> 'lang:calendars:calendar',
+				'slug'			=> 'calendar',
 				'namespace'		=> 'calendars',
 				'type'			=> 'relationship',
 				'extra'		 	=> array('choose_stream' => $streams['calendars']->id),
@@ -261,7 +261,7 @@ class Module_Calendars extends Module {
 				'name'			=> 'lang:calendars:location',
 				'slug'			=> 'location',
 				'namespace'		=> 'calendars',
-				'type'			=> 'text',
+				'type'			=> 'textarea',
 				),
 			array(
 				'name'			=> 'lang:calendars:all_day',
@@ -359,7 +359,7 @@ class Module_Calendars extends Module {
 		/* Events assignments
 		-----------------------------------------------------------*/
 		$this->streams->fields->assign_field('calendars', 'events', 'str_id', 				array('required' => true, 'unique' => true));
-		$this->streams->fields->assign_field('calendars', 'events', 'calendar_id', 			array('required' => true, 'instructions' => 'lang:calendars:instructions:calendar_id'));
+		$this->streams->fields->assign_field('calendars', 'events', 'calendar', 			array('required' => true, 'instructions' => 'lang:calendars:instructions:calendar'));
 		$this->streams->fields->assign_field('calendars', 'events', 'title', 				array('required' => true, 'title_column' => true, 'instructions' => 'lang:calendars:instructions:title'));
 		$this->streams->fields->assign_field('calendars', 'events', 'starting', 			array('required' => true, 'instructions' => 'lang:calendars:instructions:starting'));
 		$this->streams->fields->assign_field('calendars', 'events', 'ending', 				array('required' => true, 'instructions' => 'lang:calendars:instructions:ending'));

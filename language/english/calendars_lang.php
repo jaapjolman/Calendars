@@ -14,7 +14,7 @@ $lang['calendars:privacy']									= 'Privacy';
 $lang['calendars:shared']									= 'Shared';
 $lang['calendars:gc_id']									= 'Google Calendar ID';
 $lang['calendars:feed_url']									= 'Feed URL';
-$lang['calendars:calendar_id']								= 'Calendar';
+$lang['calendars:calendar']									= 'Calendar';
 $lang['calendars:location']									= 'Location';
 $lang['calendars:all_day']									= 'All Day';
 $lang['calendars:starting']									= 'Starting';
@@ -41,7 +41,7 @@ $lang['calendars:instructions:privacy']						= 'Only public calendars can be vie
 $lang['calendars:instructions:shared']						= 'Do you want to allow other users to access this calendar?';
 $lang['calendars:instructions:gc_id']						= 'Follow these instructions.';
 $lang['calendars:instructions:feed_url']					= 'Enter a URL for custom event feeds.';
-$lang['calendars:instructions:calendar_id']					= '';
+$lang['calendars:instructions:calendar']					= '';
 $lang['calendars:instructions:location']					= '';
 $lang['calendars:instructions:all_day']						= '';
 $lang['calendars:instructions:starting']					= '';
@@ -67,9 +67,16 @@ $lang['calendars:choice:repeat_span']						= "D : Daily\nW : Weekly\nM : Monthly
 
 // Titles
 $lang['calendars:title:calendars']							= 'Calendars';
+$lang['calendars:title:create_calendar']					= 'Create Calendar';
+$lang['calendars:title:edit_calendar']						= 'Edit Calendar';
 $lang['calendars:title:events']								= 'Events';
+$lang['calendars:title:create_event']						= 'Create Event';
+$lang['calendars:title:edit_event']							= 'Edit Event';
+$lang['calendars:title:view_event']							= 'View Event';
 $lang['calendars:title:jump_to']							= 'Jump to...';
 $lang['calendars:title:calendar_for']						= 'Calendar for';
+$lang['calendars:title:event_information']					= 'Event Information';
+$lang['calendars:title:tasks']								= 'Tasks';
 
 
 
@@ -80,6 +87,8 @@ $lang['calendars:tab:other']								= 'Other';
 $lang['calendars:tab:event']								= 'Event';
 $lang['calendars:tab:repeating']							= 'Repeating';
 $lang['calendars:tab:content']								= 'Content';
+$lang['calendars:tab:comments']								= 'Comments';
+$lang['calendars:tab:tasks']								= 'Tasks';
 
 
 
@@ -89,24 +98,9 @@ $lang['calendars:section:events']							= 'Events';
 
 
 
-// Success notifications
-$lang['calendars:success:create_calendar'] 					= 'The calendar has been created successfully.';
-$lang['calendars:success:edit_calendar'] 					= 'The calendar has been edited successfully.';
-$lang['calendars:success:delete_calendar'] 					= 'The calendar and it\'s events have been deleted successfully.';
-$lang['calendars:success:create_event'] 					= 'The event has been created successfully.';
-$lang['calendars:success:edit_event']	 					= 'The event has been edited successfully.';
-$lang['calendars:success:delete_event']	 					= 'The event has been deleted successfully.';
-
-
-
 // Error notifications
-$lang['calendars:error:create_calendar']					= 'There was an error trying to create your calendar.';
-$lang['calendars:error:edit_calendar']						= 'There was an error trying to edit your calendar.';
-$lang['calendars:error:delete_calendar'] 					= 'There was an error trying to delete your calendar and it\'s events.';
-$lang['calendars:error:create_event']						= 'There was an error trying to create your event.';
-$lang['calendars:error:edit_event']							= 'There was an error trying to edit your event.';
-$lang['calendars:error:delete_event']	 					= 'There was an error trying to delete your event.';
 $lang['calendars:error:no_calendars']	 					= 'Please create a calendar first.';
+$lang['calendars:error:install_tasks']	 					= 'Please install Tasks.';
 
 
 
@@ -114,6 +108,7 @@ $lang['calendars:error:no_calendars']	 					= 'Please create a calendar first.';
 $lang['calendars:button:new_calendar']						= 'New Calendar';
 $lang['calendars:button:new_event']							= 'New Event';
 $lang['calendars:button:edit_event']						= 'Edit Event';
+$lang['calendars:button:delete']							= 'Delete';
 $lang['calendars:button:show_all']							= 'Show All';
 $lang['calendars:button:hide_all']							= 'Hide All';
 $lang['calendars:button:today']								= 'Today';
@@ -127,7 +122,29 @@ $lang['calendars:button:weekly_agenda']						= 'Week Agenda';
 
 
 
+// Links
+$lang['calendars:link:edit_this_event']						= 'Edit this event';
+
+
+
 // Folders
 $lang['calendars:folder:calendars_module']					= 'Calendars Module';
 $lang['calendars:folder:events']							= 'Events';
 $lang['calendars:folder:calendars']							= 'Calendars';
+
+
+
+
+/*
+ *	Miscellaneous Stuff
+ ----------------------------------------------*/
+
+
+// (date) from (time)
+$lang['calendars:misc:from_space']							= ' from ';
+
+// (time) to (time)
+$lang['calendars:misc:to_space']							= ' to ';
+
+// All Day
+$lang['calendars:misc:all_day']								= 'All day';

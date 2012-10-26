@@ -33,7 +33,7 @@ class Calendar_events extends Admin_Controller
 			array(
 				'title' => lang('calendars:tab:event'),
 				'id' => 'event-tab',
-				'fields' => array('str_id', 'calendar_id', 'title', 'location', 'notes', 'all_day', 'starting', 'ending', 'busy'),
+				'fields' => array('str_id', 'calendar', 'title', 'location', 'notes', 'all_day', 'starting', 'ending', 'busy'),
 				),
 			array(
 				'title' => lang('calendars:tab:content'),
@@ -96,7 +96,7 @@ class Calendar_events extends Admin_Controller
 	}
 
 	/**
-	 * Create a new event
+	 * Create an new event
 	 *
 	 * @access public
 	 * @return void
@@ -122,8 +122,8 @@ class Calendar_events extends Admin_Controller
 
 		// Set some shit
 		$extra = array(
-			'return'			=> 'admin/calendars',
-			'title'				=> lang('calendars:button:new_event'),
+			'return'			=> 'admin/calendars/events/view/-id-',
+			'title'				=> lang('calendars:title:new_event'),
 		);
 
 		// Build it
@@ -131,7 +131,7 @@ class Calendar_events extends Admin_Controller
 	}
 	
 	/**
-	 * Edit a event
+	 * Edit an event
 	 *
 	 * @access public
 	 * @return void
@@ -140,7 +140,7 @@ class Calendar_events extends Admin_Controller
 	{
 		
 		// Set the title
-		$this->template->title(lang('calendars:button:edit_event'));
+		$this->template->title(lang('calendars:title:edit_event'));
 
 		
 		/* Start normal Streams_Core stuff
@@ -148,12 +148,37 @@ class Calendar_events extends Admin_Controller
 
 		// Set some shit
 		$extra = array(
-			'return'			=> 'admin/calendars',
-			'title'				=> lang('calendars:button:edit_event'),
+			'return'			=> 'admin/calendars/events/view/-id-',
+			'title'				=> lang('calendars:title:edit_event'),
 		);
 
 		// Build it
 		$this->streams->cp->entry_form('events', 'calendars', $mode = 'edit', $id, true, $extra, $skip = array(), $this->_tabs, $hidden = array('str_id'));
+	}
+
+	/**
+	 * View an event
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function view($id = false)
+	{
+
+		// From "cancel"
+		if ( ! $id ) redirect(site_url('admin/calendars'));
+
+		// Load it up
+		$event = $this->streams->entries->get_entry($id, 'events', 'calendars', false);
+
+		// Get the calendar
+		$calendar = $this->streams->entries->get_entry($event->calendar, 'calendars', 'calendars', false);
+		
+		// Set the title
+		$this->template->title(lang('calendars:title:view_event'));
+
+		// Build it
+		$this->template->build('admin/events/view', array('event' => $event, 'calendar' => $calendar));
 	}
 	
 	/**

@@ -35,7 +35,7 @@ class Calendar_m extends MY_Model {
 		
 		// Start the where statement
 		$where = array(
-			"`calendar_id` = {$id}",
+			"`calendar` = {$id}",
 			"(`repeating` = '' OR `repeating` IS NULL)",
 			"`starting` <= '".date('Y-m-d H:i:s', $end)."'",
 			"`starting` >= '".date('Y-m-d H:i:s', $start)."'",
@@ -71,7 +71,7 @@ class Calendar_m extends MY_Model {
 			$entry['borderColor'] = $calendar->bg_color;
 			$entry['textColor'] = $calendar->text_color;
 
-			$entry['calendar_id'] = $calendar->str_id;
+			$entry['calendar'] = $calendar->str_id;
 			
 			$events[] = $entry;
 		}
@@ -83,7 +83,7 @@ class Calendar_m extends MY_Model {
 		
 		// Start the where statement
 		$where = array(
-			"`calendar_id` = {$id}",
+			"`calendar` = {$id}",
 			"`repeating` = 1",
 			//"`starting` <= '".date('Y-m-d H:i:s', $end)."'",
 			//"`starting` >= '".date('Y-m-d H:i:s', $start)."'",
@@ -124,7 +124,7 @@ class Calendar_m extends MY_Model {
 			$entry['borderColor'] = $calendar->bg_color;
 			$entry['textColor'] = $calendar->text_color;
 
-			$entry['calendar_id'] = $calendar->str_id;
+			$entry['calendar'] = $calendar->str_id;
 						
 			/*	While we are on this event.. let's recurse through it's repetition and add them to the JSON
 			/*--------------------------------------------------------------------------------------------------*/
