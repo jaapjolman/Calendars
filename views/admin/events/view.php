@@ -13,7 +13,7 @@
 
 			<!-- Event Image -->
 			<?php if ( ! empty($event->event_image) ):?>
-				<?php echo $event->event_image; ?>
+				<img src="<?php echo site_url('files/thumb/'.$event->event_image); ?>" class="event-image">
 			<?php else: ?>
 				<img src="<?php echo $this->module_details['path'].'/img/no-image.jpg'; ?>" class="event-image">
 			<?php endif; ?>
