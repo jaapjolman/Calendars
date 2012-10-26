@@ -79,7 +79,7 @@ class Widget_Upcoming_events extends Widgets
 		$options['calendars'] = $this->streams->entries->get_entries(array(
 			'stream' => 'calendars',
 			'namespace' => 'calendars',
-			'where' => "`created_by` = ".$this->current_user->id." OR `sharing` LIKE '%shared%'",
+			'where' => "`created_by` = ".$this->current_user->id." OR `shared` = 1",
 			)
 		);
 
