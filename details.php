@@ -2,7 +2,7 @@
 
 class Module_Calendars extends Module {
 
-	public $version = '1.4';
+	public $version = '1.5';
 
 	public function info()
 	{
@@ -198,6 +198,13 @@ class Module_Calendars extends Module {
 				'type'			=> 'text',
 				),
 			array(
+				'name'			=> 'lang:calendars:slug',
+				'slug'			=> 'slug',
+				'namespace'		=> 'store',
+				'type'			=> 'slug',
+				'extra'			=> array('space_type' => '-', 'slug_field' => 'title'),
+				),
+			array(
 				'name'			=> 'lang:calendars:notes',
 				'slug'			=> 'notes',
 				'namespace'		=> 'calendars',
@@ -344,6 +351,7 @@ class Module_Calendars extends Module {
 		-----------------------------------------------------------*/
 		$this->streams->fields->assign_field('calendars', 'calendars', 'str_id', 			array('required' => true, 'unique' => true, 'instructions' => 'lang:calendars:instructions:str_id'));
 		$this->streams->fields->assign_field('calendars', 'calendars', 'title', 			array('required' => true, 'title_column' => true, 'instructions' => 'lang:calendars:instructions:title'));
+		$this->streams->fields->assign_field('calendars', 'calendars', 'slug',				array('required' => true, 'unique' => true, 'instructions' => 'lang:calendars:instructions:slug'));
 		$this->streams->fields->assign_field('calendars', 'calendars', 'privacy', 			array('required' => true, 'instructions' => 'lang:calendars:instructions:privacy'));
 		$this->streams->fields->assign_field('calendars', 'calendars', 'notes',		 		array('instructions' => 'lang:calendars:instructions:notes'));
 		$this->streams->fields->assign_field('calendars', 'calendars', 'description', 		array('instructions' => 'lang:calendars:instructions:description'));
@@ -412,9 +420,30 @@ class Module_Calendars extends Module {
 		switch ( $old_version )
 		{
 
+			// 1.4
+			case '1.4':
+
+				$fields = array(
+					array(
+						'name'			=> 'lang:calendars:slug',
+						'slug'			=> 'slug',
+						'namespace'		=> 'calendars',
+						'type'			=> 'slug',
+						'extra'			=> array('space_type' => '-', 'slug_field' => 'title'),
+						),
+					);
+
+				// Add all the fields
+				$this->streams->fields->add_fields($fields);
+
+				// Assign it
+				$this->streams->fields->assign_field('calendars', 'calendars', 'slug', array('required' => true, 'unique' => true, 'instructions' => 'lang:calendars:instructions:slug'));
+
+
 			// Default out
 			default: break;				
 		}
+
 
 		return true;
 	}

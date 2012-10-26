@@ -5,6 +5,7 @@
 $lang['calendars:str_id']									= 'String ID';
 $lang['calendars:default']									= 'Default';
 $lang['calendars:title']									= 'Title';
+$lang['calendars:slug']										= 'Slug';
 $lang['calendars:notes']									= 'Notes';
 $lang['calendars:description']								= 'Description';
 $lang['calendars:bg_color']									= 'Background Color';
@@ -32,6 +33,7 @@ $lang['calendars:calendar_image']							= 'Image';
 // Instructions
 $lang['calendars:instructions:str_id']						= '';
 $lang['calendars:instructions:title']						= '';
+$lang['calendars:instructions:slug']						= '';
 $lang['calendars:instructions:notes']						= 'For internal use only.';
 $lang['calendars:instructions:description']					= 'This will display on your website for public events.';
 $lang['calendars:instructions:bg_color']					= 'Choose the background color for this calendar.';

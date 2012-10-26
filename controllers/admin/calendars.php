@@ -35,7 +35,7 @@ class Calendars extends Admin_Controller
 			array(
 				'title' => lang('calendars:tab:calendar'),
 				'id' => 'calendar-tab',
-				'fields' => array('title', 'notes', 'bg_color', 'text_color'),
+				'fields' => array('title', 'slug', 'notes', 'bg_color', 'text_color'),
 				),
 			array(
 				'title' => lang('calendars:tab:content'),
@@ -136,16 +136,7 @@ class Calendars extends Admin_Controller
 	{
 		// Set the title
 		$this->template->title(lang('calendars:edit_calendar'));
-
-		// If this is a post, set the str_id
-		if ($_POST)
-		{
-
-			// Set default colors
-			if ( empty($_POST['bg_color']) ) $_POST['bg_color'] = '3366cc';
-			if ( empty($_POST['text_color']) ) $_POST['text_color'] = 'ffffff';
-			if ( ! isset($_POST['sharing']) ) $_POST['sharing'] = NULL;
-		}
+		
 
 		/* Start normal Streams_Core stuff
 		----------------------------------------------------------------------------*/
