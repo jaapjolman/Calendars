@@ -200,7 +200,7 @@ class Module_Calendars extends Module {
 			array(
 				'name'			=> 'lang:calendars:slug',
 				'slug'			=> 'slug',
-				'namespace'		=> 'store',
+				'namespace'		=> 'calendars',
 				'type'			=> 'slug',
 				'extra'			=> array('space_type' => '-', 'slug_field' => 'title'),
 				),
